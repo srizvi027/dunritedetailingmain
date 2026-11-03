@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_US",
-    images: [{ url: "/img/4.jpg", alt: "Range Rover detailed by Dun-Rite" }],
+    images: [{ url: "/img/5.jpg", alt: "Water beading on a Rolls-Royce after detailing" }],
   },
   twitter: { card: "summary_large_image" },
   icons: {
@@ -61,7 +61,7 @@ const jsonLd = {
   url: SITE.url,
   telephone: SITE.tel,
   email: SITE.email,
-  image: `${SITE.url}/img/4.jpg`,
+  image: `${SITE.url}/img/5.jpg`,
   logo: `${SITE.url}/img/logo.png`,
   address: {
     "@type": "PostalAddress",

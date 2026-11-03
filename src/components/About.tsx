@@ -12,34 +12,41 @@ const SPECIALTIES = [
 ];
 
 export default function About({ full = false }: { full?: boolean }) {
+  const primaryImage = full ? MEDIA.about : MEDIA.interiorDetail;
+
   return (
     <section className="relative overflow-hidden bg-black py-28 sm:py-40" aria-labelledby="about-h">
       <div className="hex-bg absolute inset-0 opacity-60" aria-hidden />
       <div className="relative mx-auto grid max-w-[1600px] gap-y-16 px-5 sm:px-8 lg:grid-cols-12 lg:px-12">
         {/* imagery */}
         <div className="relative lg:col-span-6 lg:self-start">
-          <MaskReveal className="aspect-[4/5] w-[78%]" parallax={36}>
-            <Image
-              src={MEDIA.interiorDetail.src}
-              alt={MEDIA.interiorDetail.alt}
-              fill
-              sizes="(min-width:1024px) 38vw, 80vw"
-              className="object-cover object-[28%_50%]"
-            />
-          </MaskReveal>
           <MaskReveal
-            from="right"
-            className="absolute -bottom-12 right-0 aspect-[4/3] w-[58%] border-[6px] border-black sm:-bottom-20"
-            parallax={20}
+            className={`${full ? "aspect-[4/5] w-full" : "aspect-[4/5] w-[78%]"}`}
+            parallax={36}
           >
             <Image
-              src={MEDIA.rangeRover.src}
-              alt={MEDIA.rangeRover.alt}
+              src={primaryImage.src}
+              alt={primaryImage.alt}
               fill
-              sizes="(min-width:1024px) 24vw, 50vw"
-              className="object-cover"
+              sizes={full ? "(min-width:1024px) 48vw, 100vw" : "(min-width:1024px) 38vw, 80vw"}
+              className={full ? "bg-black object-contain" : "object-cover object-[28%_50%]"}
             />
           </MaskReveal>
+          {!full && (
+            <MaskReveal
+              from="right"
+              className="absolute -bottom-12 right-0 aspect-[4/3] w-[58%] border-[6px] border-black sm:-bottom-20"
+              parallax={20}
+            >
+              <Image
+                src={MEDIA.galleryNine.src}
+                alt={MEDIA.galleryNine.alt}
+                fill
+                sizes="(min-width:1024px) 24vw, 50vw"
+                className="object-cover"
+              />
+            </MaskReveal>
+          )}
           <p
             aria-hidden
             className="type-outline pointer-events-none absolute -left-2 top-1/3 hidden -rotate-90 origin-left text-6xl opacity-40 xl:block"

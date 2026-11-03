@@ -5,7 +5,13 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MediaView from "./MediaView";
 import { Reveal, Words } from "./Reveal";
-import { SERVICES, serviceHref } from "@/lib/content";
+import { MEDIA, SERVICES, serviceHref, type Media } from "@/lib/content";
+
+const VIDEO_PREVIEW_IMAGES: Partial<Record<string, Media>> = {
+  "interior-detailing": MEDIA.interiorCabin,
+  "paint-correction": MEDIA.lamborghini,
+  "ceramic-coating": MEDIA.rollsRoyce,
+};
 
 /** Editorial service index: a numbered list with a sticky cinematic preview. */
 export default function ServicesIndex({
@@ -17,6 +23,10 @@ export default function ServicesIndex({
 }) {
   const [active, setActive] = useState(0);
   const current = SERVICES[active];
+  const previewMedia =
+    current.media.kind === "video"
+      ? VIDEO_PREVIEW_IMAGES[current.slug] ?? MEDIA.technician
+      : current.media;
 
   return (
     <section className="relative bg-black py-28 sm:py-36" aria-labelledby="services-h">
@@ -118,7 +128,7 @@ export default function ServicesIndex({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <MediaView media={current.media} sizes="40vw" />
+                    <MediaView media={previewMedia} sizes="40vw" />
                   </motion.div>
                 </AnimatePresence>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
