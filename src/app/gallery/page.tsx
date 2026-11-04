@@ -19,8 +19,8 @@ export default function GalleryPage() {
         title="The art of the finish."
         accentFrom={3}
         text="Browse photos and videos from Dun-Rite's detailing and paint protection work."
-        image={MEDIA.galleryNine.src}
-        imageAlt={MEDIA.galleryNine.alt}
+        image={MEDIA.instagramBmw.src}
+        imageAlt={MEDIA.instagramBmw.alt}
       />
       <section className="bg-black pb-24 pt-6 sm:pb-32">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12">

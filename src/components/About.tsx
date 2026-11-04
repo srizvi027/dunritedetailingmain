@@ -12,7 +12,7 @@ const SPECIALTIES = [
 ];
 
 export default function About({ full = false }: { full?: boolean }) {
-  const primaryImage = full ? MEDIA.galleryOne : MEDIA.galleryFive;
+  const primaryImage = full ? MEDIA.instagramDefender : MEDIA.instagramRaptor;
 
   return (
     <section className="relative overflow-hidden bg-black py-28 sm:py-40" aria-labelledby="about-h">
@@ -39,8 +39,8 @@ export default function About({ full = false }: { full?: boolean }) {
               parallax={20}
             >
               <Image
-                src={MEDIA.galleryNine.src}
-                alt={MEDIA.galleryNine.alt}
+                src={MEDIA.instagramBmw.src}
+                alt={MEDIA.instagramBmw.alt}
                 fill
                 sizes="(min-width:1024px) 24vw, 50vw"
                 className="object-cover"

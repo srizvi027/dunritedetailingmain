@@ -103,7 +103,69 @@ const PHOTOS = {
   },
 } satisfies Record<string, Media>;
 
+const instagramPhoto = (filename: string, alt: string): Media => ({
+  kind: "image",
+  src: `/img/insta%20images/${encodeURIComponent(filename)}`,
+  alt,
+});
+
+const INSTAGRAM_PHOTOS = {
+  instagramGmc: instagramPhoto(
+    "1.jpg",
+    "Black GMC SUV being washed at a customer's home",
+  ),
+  instagramMobileVan: instagramPhoto(
+    "2.jpg",
+    "Dun-Rite mobile detailing van and service sign",
+  ),
+  instagramGmcWash: instagramPhoto(
+    "3.jpg",
+    "Technician pressure washing a black GMC SUV",
+  ),
+  instagramBoat: instagramPhoto(
+    "4.jpg",
+    "Boat inside the Dun-Rite detailing studio",
+  ),
+  instagramBoatRear: instagramPhoto(
+    "5.jpg",
+    "Rear view of a boat under the detailing studio lights",
+  ),
+  instagramToyota: instagramPhoto(
+    "2026 Toyota GR Corolla straight off the showroom floor and into our shop for a 6-year ceramic co.jpg",
+    "Black Toyota GR Corolla in the Dun-Rite studio",
+  ),
+  instagramDefender: instagramPhoto(
+    "A Defender should look like this.Years of wear, swirls, and dullness corrected out — then everyt.jpg",
+    "Black Land Rover Defender after paint correction and protection",
+  ),
+  instagramBmw: instagramPhoto(
+    "BMW ALPINA — FRESH, GLOSSY & PROTECTED. 🛡️✨This ALPINA received our 2-Year Ceramic Coating Pack.jpg",
+    "Burgundy BMW ALPINA after ceramic coating",
+  ),
+  instagramCybertruck: instagramPhoto(
+    "Cybertruck charged up, cleaned up, and laced up for the road ahead ⚡️🛡️#myrtlebeach #cybertruck.jpg",
+    "Tesla Cybertruck after a detailing service",
+  ),
+  instagramRaptor: instagramPhoto(
+    "This 2026 Ford Raptor is now protected the right way. 🔥We finished this stunning red Raptor wit.jpg",
+    "Red Ford Raptor after ceramic coating",
+  ),
+  instagramF450: instagramPhoto(
+    "This F-450 came into the Dun-Rite Protection Studio for a full aluminum wheel polish 🛞✨Years of.jpg",
+    "Polished aluminum wheels on a Ford F-450",
+  ),
+  instagramHonda: instagramPhoto(
+    "Your paint doesn’t need another wax. It needs a reset. 👀This Honda CR-V came in with swirls, ha.jpg",
+    "Honda CR-V after paint correction",
+  ),
+} satisfies Record<string, Media>;
+
 const M = {
+  interiorPhoto: {
+    kind: "image",
+    src: "/img/interior.jpg",
+    alt: "Clean light-colored leather interior after detailing",
+  },
   interiorVideo: {
     kind: "video",
     src: "/video/interior.mp4",
@@ -137,6 +199,13 @@ const M = {
     src: "/video/4.mp4",
     poster: PHOTOS.galleryFour.src,
     alt: "Dun-Rite vehicle detailing showcase video 4",
+    portrait: true,
+  },
+  videoFive: {
+    kind: "video",
+    src: "/video/5.mp4",
+    poster: PHOTOS.galleryFive.src,
+    alt: "Dun-Rite vehicle detailing showcase video 5",
     portrait: true,
   },
   correction: {
@@ -195,14 +264,8 @@ const M = {
     alt: "Dun-Rite detailing video, recorded at 2:11:15 AM",
     portrait: true,
   },
-  whatsappVideoSeven: {
-    kind: "video",
-    src: "/video/WhatsApp%20Video%202026-11-05%20at%202.11.26%20AM.mp4",
-    poster: PHOTOS.galleryTwo.src,
-    alt: "Dun-Rite detailing video, recorded at 2:11:26 AM",
-    portrait: true,
-  },
   ...PHOTOS,
+  ...INSTAGRAM_PHOTOS,
   hero: {
     kind: "video",
     src: "/video/hero.mp4",
@@ -235,7 +298,7 @@ export const SERVICES: Service[] = [
       "Multi-Year Ceramic Coating Packages",
       "Full Interior Detailing, with no area left untouched",
     ],
-    media: M.interiorVideo,
+    media: M.interiorPhoto,
     page: true,
     related: ["stain-odor-removal", "exterior-detailing", "ceramic-coating"],
   },
@@ -258,7 +321,7 @@ export const SERVICES: Service[] = [
       "Ceramic Coating",
       "Headlight Restoration",
     ],
-    media: PHOTOS.galleryTwo,
+    media: M.instagramGmcWash,
     page: true,
     related: ["wash-and-wax", "paint-correction", "ceramic-coating"],
   },
@@ -298,7 +361,7 @@ export const SERVICES: Service[] = [
       "Wax applied for shine",
       "Protective wax layer",
     ],
-    media: PHOTOS.galleryEight,
+    media: M.instagramGmc,
     page: true,
     related: ["exterior-detailing", "paint-correction", "ceramic-coating"],
   },
@@ -359,7 +422,7 @@ export const SERVICES: Service[] = [
       "Coverage tailored to your vehicle",
       "Pairs with paint correction and ceramic coating",
     ],
-    media: PHOTOS.gallerySix,
+    media: M.instagramCybertruck,
     page: true,
     related: ["ceramic-coating", "paint-correction", "exterior-detailing"],
   },
@@ -372,7 +435,7 @@ export const SERVICES: Service[] = [
       "Suited to daily drivers that need affordable, long-lasting paint protection.",
     body: [],
     includes: [],
-    media: PHOTOS.galleryEight,
+    media: M.instagramToyota,
     page: false,
     href: "/services/ceramic-coating#tiers",
     related: [],
@@ -386,7 +449,7 @@ export const SERVICES: Service[] = [
       "The best balance of protection, appearance and value in the Dun-Rite coating lineup.",
     body: [],
     includes: [],
-    media: PHOTOS.galleryEight,
+    media: M.instagramBmw,
     page: false,
     href: "/services/ceramic-coating#tiers",
     related: [],
@@ -400,7 +463,7 @@ export const SERVICES: Service[] = [
       "The highest level of long-term ceramic protection Dun-Rite offers.",
     body: [],
     includes: [],
-    media: PHOTOS.gallerySix,
+    media: M.instagramRaptor,
     page: false,
     href: "/services/ceramic-coating#tiers",
     related: [],
@@ -439,7 +502,7 @@ export const SERVICES: Service[] = [
       "Boat detailing, performed at your marina.",
     body: [],
     includes: [],
-    media: PHOTOS.galleryNine,
+    media: M.instagramBoat,
     page: false,
     related: [],
   },

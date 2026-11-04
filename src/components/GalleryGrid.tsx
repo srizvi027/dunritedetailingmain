@@ -5,7 +5,23 @@ import { MEDIA, type Media } from "@/lib/content";
 type Tile = { media: Media; label: string; cls: string };
 
 /** Uploaded Dun-Rite photography and service footage. */
+const INSTAGRAM_TILES: Tile[] = [
+  { media: MEDIA.instagramToyota, label: "Toyota GR Corolla · ceramic protection", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramBmw, label: "BMW ALPINA · ceramic coating", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramDefender, label: "Land Rover Defender · paint correction", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramRaptor, label: "Ford Raptor · ceramic protection", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramCybertruck, label: "Tesla Cybertruck detailing", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramF450, label: "Ford F-450 · wheel polish", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramHonda, label: "Honda CR-V · paint correction", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramGmc, label: "Black GMC · mobile wash", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramGmcWash, label: "Black GMC · exterior wash", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramBoat, label: "Boat detailing in the studio", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramBoatRear, label: "Boat finish under studio lights", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.instagramMobileVan, label: "Dun-Rite mobile detailing", cls: "md:col-span-4 aspect-[3/4]" },
+];
+
 const TILES: Tile[] = [
+  ...INSTAGRAM_TILES,
   { media: MEDIA.galleryOne, label: "Lincoln in the detailing studio", cls: "md:col-span-8 aspect-[4/3] md:aspect-auto md:min-h-[520px]" },
   { media: MEDIA.galleryTwo, label: "Ceramic coating application", cls: "md:col-span-4 aspect-[4/5] md:aspect-auto" },
   { media: MEDIA.galleryThree, label: "Black SUV under studio lights", cls: "md:col-span-5 aspect-[3/2] md:aspect-auto md:min-h-[360px]" },
@@ -19,6 +35,7 @@ const TILES: Tile[] = [
   { media: MEDIA.videoTwo, label: "Detailing video 2", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.videoThree, label: "Detailing video 3", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.videoFour, label: "Detailing video 4", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.videoFive, label: "Detailing video 5", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.interiorVideo, label: "Interior detailing", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.ceramic, label: "Ceramic coating", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.correction, label: "Paint correction", cls: "md:col-span-4 aspect-[3/4]" },
@@ -29,7 +46,6 @@ const TILES: Tile[] = [
   { media: MEDIA.whatsappVideoFour, label: "Detailing video · 2:10:40 AM", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.whatsappVideoFive, label: "Detailing video · 2:10:47 AM", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.whatsappVideoSix, label: "Detailing video · 2:11:15 AM", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.whatsappVideoSeven, label: "Detailing video · 2:11:26 AM", cls: "md:col-span-4 aspect-[3/4]" },
 ];
 
 function TileGrid({ tiles }: { tiles: Tile[] }) {

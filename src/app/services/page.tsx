@@ -23,8 +23,8 @@ export default function ServicesPage() {
         title="Everything your finish needs."
         accentFrom={2}
         text="From a fast wash and wax to multi-year ceramic protection, mobile or in our studio."
-        image={MEDIA.galleryOne.src}
-        imageAlt={MEDIA.galleryOne.alt}
+        image={MEDIA.instagramToyota.src}
+        imageAlt={MEDIA.instagramToyota.alt}
       />
 
       <ServicesIndex heading="The complete lineup." eyebrow="01 — All services" />
