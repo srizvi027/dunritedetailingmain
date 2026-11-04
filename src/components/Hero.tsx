@@ -127,21 +127,38 @@ export default function Hero() {
           appearance and preserve its finish.
         </motion.p>
 
-        <motion.div {...fadeUp(1.05)} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <Link href="/services" className="btn btn-pink group relative isolate overflow-hidden">
+        <motion.div {...fadeUp(1.05)} className="mt-9 grid w-full max-w-3xl gap-3 sm:grid-cols-2">
+          <Link
+            href="/services"
+            className="btn btn-pink group relative min-h-24 flex-col items-start gap-1 overflow-hidden px-6 py-5 text-left !whitespace-normal"
+          >
             <span
               aria-hidden
               className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-0 transition-opacity duration-300 group-hover:opacity-30 group-focus-visible:opacity-30"
               style={{ backgroundImage: `url('${MEDIA.instagramRaptor.src}')` }}
             />
-            Explore services <span className="arrow" aria-hidden>→</span>
+            <span className="font-display text-base font-extrabold tracking-normal sm:text-lg">
+              Explore Detailing Services
+            </span>
+            <span className="text-[0.65rem] font-bold tracking-[0.16em] opacity-80">
+              See all services <span className="arrow" aria-hidden>→</span>
+            </span>
           </Link>
-          <Link href="/get-a-quote" className="btn btn-ghost">
-            Get a free quote
-          </Link>
-          <a href={`tel:${SITE.tel}`} className="btn btn-ghost">
-            Call {SITE.phone}
+          <a
+            href={`tel:${SITE.tel}`}
+            className="btn btn-ghost min-h-24 flex-col items-start gap-1 px-6 py-5 text-left !whitespace-normal"
+            aria-label={`Call Dun-Rite at ${SITE.phone}`}
+          >
+            <span className="text-[0.65rem] font-bold tracking-[0.18em] text-pink">
+              Call Dun-Rite
+            </span>
+            <span className="font-display text-[clamp(1.35rem,4vw,2rem)] font-extrabold tracking-normal">
+              {SITE.phone}
+            </span>
           </a>
+          <Link href="/get-a-quote" className="btn btn-ghost min-h-14 sm:col-span-2">
+            Get a free quote <span className="arrow" aria-hidden>→</span>
+          </Link>
         </motion.div>
       </motion.div>
 
