@@ -18,6 +18,12 @@ const TILES: Tile[] = [
   { media: MEDIA.technician, label: "Professional detailing", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.galleryNine, label: "Exterior wash", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.galleryTen, label: "Dun-Rite service van", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryEleven, label: "Luxury finish", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryTwelve, label: "Paint correction", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryThirteen, label: "Detailing work", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.videoOne, label: "Detailing video 1", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.videoTwo, label: "Detailing video 2", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.videoFour, label: "Detailing video 4", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.hero, label: "Supercar interior", cls: "md:col-span-4 aspect-[3/4]" },
 ];
 

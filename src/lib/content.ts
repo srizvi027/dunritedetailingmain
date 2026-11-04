@@ -127,6 +127,39 @@ const M = {
     src: "/img/10.jpg",
     alt: "Dun-Rite detailing service van",
   },
+  galleryEleven: {
+    kind: "image",
+    src: "/img/11.jpg",
+    alt: "Dun-Rite exterior detailing finish on a luxury vehicle",
+  },
+  galleryTwelve: {
+    kind: "image",
+    src: "/img/12.jpg",
+    alt: "Professional Dun-Rite paint correction and protection work",
+  },
+  galleryThirteen: {
+    kind: "image",
+    src: "/img/13.jpg",
+    alt: "Dun-Rite detailing work on a polished vehicle",
+  },
+  videoOne: {
+    kind: "video",
+    src: "/video/1.mp4",
+    alt: "Dun-Rite vehicle detailing showcase video 1",
+    portrait: true,
+  },
+  videoTwo: {
+    kind: "video",
+    src: "/video/2.mp4",
+    alt: "Dun-Rite vehicle detailing showcase video 2",
+    portrait: true,
+  },
+  videoFour: {
+    kind: "video",
+    src: "/video/4.mp4",
+    alt: "Dun-Rite vehicle detailing showcase video 4",
+    portrait: true,
+  },
   hero: {
     kind: "video",
     src: "/video/hero.mp4",
