@@ -6,28 +6,31 @@ type Tile = { media: Media; label: string; cls: string };
 
 /** Uploaded Dun-Rite photography and service footage. */
 const TILES: Tile[] = [
-  { media: MEDIA.rollsRoyce, label: "Water-beading finish", cls: "md:col-span-8 aspect-[4/3] md:aspect-auto md:min-h-[520px]" },
-  { media: MEDIA.ceramic, label: "Ceramic coating application", cls: "md:col-span-4 aspect-[4/5] md:aspect-auto" },
-  { media: MEDIA.technician, label: "Interior detailing", cls: "md:col-span-5 aspect-[3/2] md:aspect-auto md:min-h-[360px]" },
-  { media: MEDIA.lamborghini, label: "Exterior wash", cls: "md:col-span-7 aspect-[4/3] md:aspect-auto md:min-h-[360px]" },
-  { media: MEDIA.correction, label: "Paint correction", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.interiorCabin, label: "Interior detail", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.boat, label: "Boat detailing", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.mobileWash, label: "Mobile detailing", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.interiorDetail, label: "Interior care", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.technician, label: "Professional detailing", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.galleryNine, label: "Exterior wash", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.galleryTen, label: "Dun-Rite service van", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.galleryEleven, label: "Luxury finish", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.galleryTwelve, label: "Paint correction", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.galleryThirteen, label: "Detailing work", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryOne, label: "Lincoln in the detailing studio", cls: "md:col-span-8 aspect-[4/3] md:aspect-auto md:min-h-[520px]" },
+  { media: MEDIA.galleryTwo, label: "Ceramic coating application", cls: "md:col-span-4 aspect-[4/5] md:aspect-auto" },
+  { media: MEDIA.galleryThree, label: "Black SUV under studio lights", cls: "md:col-span-5 aspect-[3/2] md:aspect-auto md:min-h-[360px]" },
+  { media: MEDIA.galleryFour, label: "Black Corvette in the studio", cls: "md:col-span-7 aspect-[4/3] md:aspect-auto md:min-h-[360px]" },
+  { media: MEDIA.galleryFive, label: "Corvette reflecting studio lights", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.gallerySix, label: "Corvette finish", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.gallerySeven, label: "Classic Corvette", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryEight, label: "Gray Corvette in the studio", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.galleryNine, label: "Classic Corvette and motorcycle", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.videoOne, label: "Detailing video 1", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.videoTwo, label: "Detailing video 2", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.videoThree, label: "Detailing video 3", cls: "md:col-span-4 aspect-[3/4]" },
   { media: MEDIA.videoFour, label: "Detailing video 4", cls: "md:col-span-4 aspect-[3/4]" },
-  { media: MEDIA.hero, label: "Supercar interior", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.interiorVideo, label: "Interior detailing", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.ceramic, label: "Ceramic coating", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.correction, label: "Paint correction", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.hero, label: "Steam cleaning", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoOne, label: "Detailing video · 2:10:28 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoTwo, label: "Detailing video · 2:10:31 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoThree, label: "Detailing video · 2:10:39 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoFour, label: "Detailing video · 2:10:40 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoFive, label: "Detailing video · 2:10:47 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoSix, label: "Detailing video · 2:11:15 AM", cls: "md:col-span-4 aspect-[3/4]" },
+  { media: MEDIA.whatsappVideoSeven, label: "Detailing video · 2:11:26 AM", cls: "md:col-span-4 aspect-[3/4]" },
 ];
-
-const REPEATED_PHOTO_SOURCES = new Set(["/img/2.jpg", "/img/5.jpg", "/img/7.jpg"]);
 
 function TileGrid({ tiles }: { tiles: Tile[] }) {
   return (
@@ -68,8 +71,7 @@ export default function GalleryGrid({
 }) {
   if (separateMedia) {
     const photos = TILES.filter(
-      (tile) =>
-        tile.media.kind === "image" && !REPEATED_PHOTO_SOURCES.has(tile.media.src),
+      (tile) => tile.media.kind === "image",
     );
     const videos = TILES.filter((tile) => tile.media.kind === "video");
 

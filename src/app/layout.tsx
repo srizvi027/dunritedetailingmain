@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SITE } from "@/lib/content";
+import { MEDIA, SITE } from "@/lib/content";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_US",
-    images: [{ url: "/img/5.jpg", alt: "Water beading on a Rolls-Royce after detailing" }],
+    images: [{ url: MEDIA.galleryEight.src, alt: MEDIA.galleryEight.alt }],
   },
   twitter: { card: "summary_large_image" },
   icons: {
@@ -61,7 +61,7 @@ const jsonLd = {
   url: SITE.url,
   telephone: SITE.tel,
   email: SITE.email,
-  image: `${SITE.url}/img/5.jpg`,
+  image: `${SITE.url}${MEDIA.galleryEight.src}`,
   logo: `${SITE.url}/img/logo.png`,
   address: {
     "@type": "PostalAddress",

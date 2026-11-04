@@ -12,7 +12,7 @@ const SPECIALTIES = [
 ];
 
 export default function About({ full = false }: { full?: boolean }) {
-  const primaryImage = full ? MEDIA.about : MEDIA.interiorDetail;
+  const primaryImage = full ? MEDIA.galleryOne : MEDIA.galleryFive;
 
   return (
     <section className="relative overflow-hidden bg-black py-28 sm:py-40" aria-labelledby="about-h">

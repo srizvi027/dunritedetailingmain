@@ -8,9 +8,9 @@ import { Reveal, Words } from "./Reveal";
 import { MEDIA, SERVICES, serviceHref, type Media } from "@/lib/content";
 
 const VIDEO_PREVIEW_IMAGES: Partial<Record<string, Media>> = {
-  "interior-detailing": MEDIA.interiorCabin,
-  "paint-correction": MEDIA.lamborghini,
-  "ceramic-coating": MEDIA.rollsRoyce,
+  "interior-detailing": MEDIA.galleryThree,
+  "paint-correction": MEDIA.gallerySix,
+  "ceramic-coating": MEDIA.galleryEight,
 };
 
 /** Editorial service index: a numbered list with a sticky cinematic preview. */
@@ -25,7 +25,7 @@ export default function ServicesIndex({
   const current = SERVICES[active];
   const previewMedia =
     current.media.kind === "video"
-      ? VIDEO_PREVIEW_IMAGES[current.slug] ?? MEDIA.technician
+      ? VIDEO_PREVIEW_IMAGES[current.slug] ?? MEDIA.galleryTwo
       : current.media;
 
   return (

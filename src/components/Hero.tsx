@@ -132,7 +132,7 @@ export default function Hero() {
             <span
               aria-hidden
               className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-0 transition-opacity duration-300 group-hover:opacity-30 group-focus-visible:opacity-30"
-              style={{ backgroundImage: "url('/img/2.jpg')" }}
+              style={{ backgroundImage: `url('${MEDIA.galleryEight.src}')` }}
             />
             Explore services <span className="arrow" aria-hidden>→</span>
           </Link>
