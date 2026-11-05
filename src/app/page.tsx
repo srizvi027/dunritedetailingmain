@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import ServicesIndex from "@/components/ServicesIndex";
+import PricingOverview from "@/components/PricingOverview";
 import GallerySection from "@/components/GallerySection";
 import Why from "@/components/Why";
 import Testimonials from "@/components/Testimonials";
@@ -25,6 +26,7 @@ export default function Home() {
       <Marquee />
       <About />
       <ServicesIndex />
+      <PricingOverview />
       <GallerySection />
       <Why />
       <Testimonials />
