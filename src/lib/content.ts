@@ -235,6 +235,10 @@ const M = {
     alt: "Quick wash and wax video showing a vehicle getting a fresh finish",
     portrait: true,
   },
+  washPhoto: newImage(
+    "wash1.jpg",
+    "Vehicle with a fresh finish after a wash and wax service",
+  ),
   boatDetailing: newImage(
     "33.jpg",
     "Boat detailing and premium finish restoration in the marine environment",
@@ -450,7 +454,7 @@ export const SERVICES: Service[] = [
       "Protective wax layer",
     ],
     media: M.washVideo,
-    gallery: [M.mobilePromo, M.mobileDetailing],
+    gallery: [M.washPhoto],
     page: true,
     related: ["exterior-detailing", "paint-correction", "ceramic-coating"],
   },
