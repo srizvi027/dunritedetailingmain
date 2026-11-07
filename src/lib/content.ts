@@ -212,10 +212,7 @@ const M = {
     "Ceramic coated this Porsche with our 9-Year System X package. 🛡️💎✔️ Paint sealed for long-term.jpg",
     "Porsche with long-term ceramic protection and paint protection film details",
   ),
-  paintCorrectionMain: newImage(
-    "Back at it again — maintenance detail on this stunning 488 Spider 🕷️Always Dun-Rite. Always per.jpg",
-    "Luxury sports car receiving a paint correction detail",
-  ),
+  paintCorrectionMain: INSTAGRAM_PHOTOS.instagramHonda,
   ceramicMain: newImage(
     "Ceramic coating isn’t about shine alone.It’s about UV protection, easier maintenance, and keepin.jpg",
     "Vehicle being treated with a ceramic coating for durable paint protection",
@@ -474,8 +471,8 @@ export const SERVICES: Service[] = [
       "Deep gloss and clarity",
       "Ideal preparation before ceramic coating",
     ],
-    media: M.paintVideo,
-    gallery: [M.paintVideo],
+    media: M.paintCorrectionMain,
+    gallery: [M.paintCorrectionMain],
     page: true,
     related: ["ceramic-coating", "exterior-detailing", "wash-and-wax"],
   },

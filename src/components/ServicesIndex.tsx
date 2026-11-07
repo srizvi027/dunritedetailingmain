@@ -8,7 +8,6 @@ import { Reveal, Words } from "./Reveal";
 import { MEDIA, SERVICES, serviceHref, type Media } from "@/lib/content";
 
 const VIDEO_PREVIEW_IMAGES: Partial<Record<string, Media>> = {
-  "paint-correction": MEDIA.instagramDefender,
   "ceramic-coating": MEDIA.galleryEight,
 };
 
