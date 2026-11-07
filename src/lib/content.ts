@@ -48,6 +48,7 @@ export type Service = {
   body: string[];
   includes: string[];
   media: Media;
+  gallery?: Media[];
   /** has its own /services/[slug] page */
   page: boolean;
   related: string[];
@@ -160,7 +161,91 @@ const INSTAGRAM_PHOTOS = {
   ),
 } satisfies Record<string, Media>;
 
+const newImage = (filename: string, alt: string): Media => ({
+  kind: "image",
+  src: `/img/new%20images/${encodeURIComponent(filename)}`,
+  alt,
+});
+
 const M = {
+  van: {
+    kind: "image",
+    src: "/img/van.jpeg",
+    alt: "Dun-Rite mobile detailing van",
+  },
+  headlight: {
+    kind: "image",
+    src: "/img/headlight.jpg",
+    alt: "Headlight restoration on a vehicle with clear, restored lenses",
+  },
+  mobileDetailing: newImage(
+    "🚐💎 MOBILE DETAILING — WE COME TO YOU 💎🚐Home • Office • Anywhere You Park⚡ Tesla Model Y dial.jpg",
+    "Dun-Rite mobile detailing service working at a customer location",
+  ),
+  interiorDisaster: newImage(
+    "⚠️Warning- kids at play, interior disaster detail unfolding! Swipe left to see the before & afte.jpg",
+    "Interior detail before and after on a heavily used family vehicle",
+  ),
+  paintCorrection: newImage(
+    "Back at it again — maintenance detail on this stunning 488 Spider 🕷️Always Dun-Rite. Always per.jpg",
+    "Luxury sports car receiving paint correction and finishing work",
+  ),
+  paintVideo: {
+    kind: "video",
+    src: "/video/paint.mp4",
+    poster: "/img/insta%20images/Your%20paint%20doesn%E2%80%99t%20need%20another%20wax.%20It%20needs%20a%20reset.%20%E2%9D%80This%20Honda%20CR-V%20came%20in%20with%20swirls%2C%20ha.jpg",
+    alt: "Paint correction video showing swirl removal and gloss restoration",
+    portrait: true,
+  },
+  ppfVideo: {
+    kind: "video",
+    src: "/video/paint-protection-film.mp4",
+    poster: "/img/insta%20images/Cybertruck%20charged%20up%2C%20cleaned%20up%2C%20and%20laced%20up%20for%20the%20road%20ahead%20%E2%9A%A1%EF%B8%8F%F0%9F%9B%A1%EF%B8%8F%23myrtlebeach%20%23cybertruck.jpg",
+    alt: "Paint protection film video showing film applied to a vehicle",
+    portrait: true,
+  },
+  ceramicDetail: newImage(
+    "Ceramic coating isn’t about shine alone.It’s about UV protection, easier maintenance, and keepin.jpg",
+    "Ceramic coating applied to protect the paint and keep maintenance easy",
+  ),
+  ppfDetail: newImage(
+    "Ceramic coated this Porsche with our 9-Year System X package. 🛡️💎✔️ Paint sealed for long-term.jpg",
+    "Porsche with long-term ceramic protection and paint protection film details",
+  ),
+  paintCorrectionMain: newImage(
+    "Back at it again — maintenance detail on this stunning 488 Spider 🕷️Always Dun-Rite. Always per.jpg",
+    "Luxury sports car receiving a paint correction detail",
+  ),
+  ceramicMain: newImage(
+    "Ceramic coating isn’t about shine alone.It’s about UV protection, easier maintenance, and keepin.jpg",
+    "Vehicle being treated with a ceramic coating for durable paint protection",
+  ),
+  ppfMain: newImage(
+    "Ceramic coated this Porsche with our 9-Year System X package. 🛡️💎✔️ Paint sealed for long-term.jpg",
+    "Porsche showcased with clear paint protection film and ceramic protection",
+  ),
+  mobilePromo: newImage(
+    "🔥 WOULD YOU PAY TO HAVE YOUR VEHICLE DETAILED… WITHOUT LEAVING YOUR DRIVEWAY 🔥This holiday sea.jpg",
+    "Mobile detailing promo shot showing an at-home vehicle service",
+  ),
+  washVideo: {
+    kind: "video",
+    src: "/img/new%20images/wash.mp4",
+    poster: "/img/interior.jpg",
+    alt: "Quick wash and wax video showing a vehicle getting a fresh finish",
+    portrait: true,
+  },
+  boatDetailing: newImage(
+    "33.jpg",
+    "Boat detailing and premium finish restoration in the marine environment",
+  ),
+  boatVideo: {
+    kind: "video",
+    src: "/img/new%20images/boat.mp4",
+    poster: "/img/interior.jpg",
+    alt: "Boat detailing work in progress at the marina",
+    portrait: true,
+  },
   interiorPhoto: {
     kind: "image",
     src: "/img/interior.jpg",
@@ -299,6 +384,7 @@ export const SERVICES: Service[] = [
       "Full Interior Detailing, with no area left untouched",
     ],
     media: M.interiorPhoto,
+    gallery: [M.interiorDisaster],
     page: true,
     related: ["stain-odor-removal", "exterior-detailing", "ceramic-coating"],
   },
@@ -322,6 +408,7 @@ export const SERVICES: Service[] = [
       "Headlight Restoration",
     ],
     media: M.instagramGmcWash,
+    gallery: [M.mobileDetailing, M.mobilePromo],
     page: true,
     related: ["wash-and-wax", "paint-correction", "ceramic-coating"],
   },
@@ -341,7 +428,8 @@ export const SERVICES: Service[] = [
       "Improves visibility and appearance",
       "Can be added to any exterior detail",
     ],
-    media: PHOTOS.gallerySix,
+    media: M.headlight,
+    gallery: [M.headlight],
     page: true,
     related: ["exterior-detailing", "paint-correction", "wash-and-wax"],
   },
@@ -361,7 +449,8 @@ export const SERVICES: Service[] = [
       "Wax applied for shine",
       "Protective wax layer",
     ],
-    media: M.instagramGmc,
+    media: M.washVideo,
+    gallery: [M.mobilePromo, M.mobileDetailing],
     page: true,
     related: ["exterior-detailing", "paint-correction", "ceramic-coating"],
   },
@@ -381,7 +470,8 @@ export const SERVICES: Service[] = [
       "Deep gloss and clarity",
       "Ideal preparation before ceramic coating",
     ],
-    media: M.correction,
+    media: M.paintVideo,
+    gallery: [M.paintVideo],
     page: true,
     related: ["ceramic-coating", "exterior-detailing", "wash-and-wax"],
   },
@@ -402,7 +492,8 @@ export const SERVICES: Service[] = [
       "Easier cleaning",
       "Crystal Coating, Pro+ Ceramic Coating, Max G+ Coating",
     ],
-    media: M.ceramic,
+    media: M.ceramicMain,
+    gallery: [M.ceramicMain, M.ceramicDetail, M.ppfDetail],
     page: true,
     related: ["paint-correction", "wash-and-wax", "interior-detailing"],
   },
@@ -422,7 +513,8 @@ export const SERVICES: Service[] = [
       "Coverage tailored to your vehicle",
       "Pairs with paint correction and ceramic coating",
     ],
-    media: M.instagramCybertruck,
+    media: M.ppfMain,
+    gallery: [M.ppfVideo],
     page: true,
     related: ["ceramic-coating", "paint-correction", "exterior-detailing"],
   },
@@ -502,7 +594,8 @@ export const SERVICES: Service[] = [
       "Boat detailing, performed at your marina.",
     body: [],
     includes: [],
-    media: M.instagramBoat,
+    media: M.boatVideo,
+    gallery: [M.boatVideo, M.boatDetailing],
     page: false,
     related: [],
   },

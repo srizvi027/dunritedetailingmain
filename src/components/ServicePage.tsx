@@ -17,6 +17,7 @@ export default function ServicePage({ service }: { service: Service }) {
   const related = service.related
     .map((s) => serviceBySlug(s))
     .filter((s): s is Service => !!s);
+  const gallery = service.gallery ?? [];
   const isCeramic = service.slug === "ceramic-coating";
 
   return (
@@ -180,12 +181,26 @@ export default function ServicePage({ service }: { service: Service }) {
       )}
 
       {/* media band */}
-      {!isVideo && (
+      {(gallery.length > 0 || !isVideo) && (
         <section className="bg-black pb-24 sm:pb-32">
           <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12">
-            <MaskReveal className="aspect-[16/9] w-full sm:aspect-[21/9]" parallax={50}>
-              <MediaView media={service.media} sizes="100vw" />
-            </MaskReveal>
+            {gallery.length > 0 ? (
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {gallery.map((item, index) => (
+                  <MaskReveal
+                    key={`${service.slug}-${index}`}
+                    className="relative aspect-[4/5] overflow-hidden"
+                    parallax={24}
+                  >
+                    <MediaView media={item} sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw" />
+                  </MaskReveal>
+                ))}
+              </div>
+            ) : (
+              <MaskReveal className="aspect-[16/9] w-full sm:aspect-[21/9]" parallax={50}>
+                <MediaView media={service.media} sizes="100vw" />
+              </MaskReveal>
+            )}
           </div>
         </section>
       )}

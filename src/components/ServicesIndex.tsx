@@ -23,9 +23,11 @@ export default function ServicesIndex({
   const [active, setActive] = useState(0);
   const current = SERVICES[active];
   const previewMedia =
-    current.media.kind === "video"
-      ? VIDEO_PREVIEW_IMAGES[current.slug] ?? MEDIA.galleryTwo
-      : current.media;
+    current.gallery && current.gallery.length > 0
+      ? current.gallery[0]
+      : current.media.kind === "video"
+        ? VIDEO_PREVIEW_IMAGES[current.slug] ?? MEDIA.galleryTwo
+        : current.media;
 
   return (
     <section className="relative bg-black py-28 sm:py-36" aria-labelledby="services-h">
