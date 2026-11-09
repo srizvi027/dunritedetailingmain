@@ -31,7 +31,7 @@ export default function PricingPage() {
               <a
                 key={category.id}
                 href={`#${category.id}`}
-                className="border border-white/15 px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-silver transition-colors hover:border-pink hover:text-white"
+                className="min-h-11 border border-white/15 px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-silver transition-colors hover:border-pink hover:text-white sm:min-h-0"
               >
                 {category.title}
               </a>

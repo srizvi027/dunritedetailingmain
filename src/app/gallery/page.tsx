@@ -25,8 +25,18 @@ export default function GalleryPage() {
       <section className="bg-black pb-24 pt-6 sm:pb-32">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12">
           <nav aria-label="Gallery sections" className="mb-14 flex gap-6 border-b border-white/10 pb-5">
-            <a href="#photos" className="u-link text-sm font-bold uppercase tracking-[0.18em]">Photos</a>
-            <a href="#videos" className="u-link text-sm font-bold uppercase tracking-[0.18em]">Videos</a>
+            <a
+              href="#photos"
+              className="u-link inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.18em] sm:inline-block sm:min-h-0"
+            >
+              Photos
+            </a>
+            <a
+              href="#videos"
+              className="u-link inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.18em] sm:inline-block sm:min-h-0"
+            >
+              Videos
+            </a>
           </nav>
           <GalleryGrid separateMedia />
         </div>

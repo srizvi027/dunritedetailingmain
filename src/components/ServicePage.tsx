@@ -145,7 +145,7 @@ export default function ServicePage({ service }: { service: Service }) {
               <p className="eyebrow mb-6"><span className="text-pink">02</span> — Coating levels</p>
             </Reveal>
             <Words as="h2" text="Choose your level of protection." className="max-w-4xl text-[clamp(2rem,5.4vw,5.2rem)]" />
-            <div className="mt-16 grid gap-5 lg:grid-cols-3">
+            <div className="mt-16 grid grid-cols-1 gap-5 lg:grid-cols-3">
               {COATING_TIERS.map((t, i) => (
                 <Reveal key={t.id} delay={i * 0.1}>
                   <article
