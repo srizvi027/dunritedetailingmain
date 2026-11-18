@@ -1,3 +1,5 @@
+import { MEDIA, type Media } from "@/lib/content";
+
 export type PriceOption = {
   label: string;
   amount: number;
@@ -7,6 +9,7 @@ export type PriceOption = {
 export type PriceService = {
   name: string;
   options: PriceOption[];
+  media: Media;
   badge?: string;
   note?: string;
   duration?: string;
@@ -27,6 +30,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
     services: [
       {
         name: "Essential Interior Detail + Exterior Wash",
+        media: MEDIA.washPhoto,
         options: [
           { label: "Coupe / Sedan", amount: 125 },
           { label: "SUV / Truck", amount: 145 },
@@ -37,6 +41,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
       },
       {
         name: "Deep Clean Luxury Interior Detail + Exterior Wash",
+        media: MEDIA.interiorVideo,
         options: [
           { label: "Coupe / Sedan", amount: 249 },
           { label: "SUV / Truck", amount: 299 },
@@ -47,6 +52,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
       },
       {
         name: "Complete Detail + Paint Enhancement",
+        media: MEDIA.instagramDefender,
         options: [
           { label: "Coupe / Sedan", amount: 475 },
           { label: "SUV / Truck", amount: 550 },
@@ -61,6 +67,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
     services: [
       {
         name: "Complete Detail + Paint Enhancement",
+        media: MEDIA.galleryFive,
         options: [
           { label: "Coupe / Sedan", amount: 475 },
           { label: "SUV / Truck", amount: 550 },
@@ -77,21 +84,25 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
     services: [
       {
         name: "Wheels Coating",
+        media: MEDIA.instagramF450,
         options: [{ label: "Wheels", amount: 125 }],
       },
       {
         name: "Level 1",
+        media: MEDIA.ceramicDetail,
         options: [{ label: "Starting at", amount: 850, startingAt: true }],
         note: "Mobile or studio installation.",
       },
       {
         name: "Level 2",
+        media: MEDIA.ceramic,
         badge: "Most popular",
         options: [{ label: "Starting at", amount: 1399, startingAt: true }],
         note: "Studio only.",
       },
       {
         name: "Level 3",
+        media: MEDIA.instagramRaptor,
         options: [{ label: "Starting at", amount: 1999, startingAt: true }],
         note: "Studio only.",
       },
@@ -104,6 +115,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
     services: [
       {
         name: "1-Step Paint Correction",
+        media: MEDIA.correction,
         options: [
           { label: "Sedan", amount: 275 },
           { label: "SUV", amount: 385 },
@@ -112,6 +124,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
       },
       {
         name: "2-Step Paint Correction",
+        media: MEDIA.paintVideo,
         options: [
           { label: "Sedan", amount: 475 },
           { label: "SUV", amount: 550 },
@@ -120,6 +133,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
       },
       {
         name: "3-Step Paint Correction",
+        media: MEDIA.instagramHonda,
         options: [
           { label: "Sedan", amount: 750 },
           { label: "SUV", amount: 950 },
@@ -135,14 +149,17 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
     services: [
       {
         name: "Dun-Rite Vehicle Care Membership",
+        media: MEDIA.membershipCard,
         options: [{ label: "Membership", amount: 100 }],
       },
       {
         name: "Essential Gift Certificate",
+        media: MEDIA.eGiftCard,
         options: [{ label: "Gift certificate", amount: 150 }],
       },
       {
         name: "$400 Gift Card",
+        media: MEDIA.giftCard,
         options: [{ label: "Gift card", amount: 400 }],
       },
     ],

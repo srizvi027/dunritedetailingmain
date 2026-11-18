@@ -167,6 +167,11 @@ const newImage = (filename: string, alt: string): Media => ({
   alt,
 });
 
+const interiorDisaster = newImage(
+  "⚠️Warning- kids at play, interior disaster detail unfolding! Swipe left to see the before & afte.jpg",
+  "Interior detail before and after on a heavily used family vehicle",
+);
+
 const M = {
   van: {
     kind: "image",
@@ -182,10 +187,7 @@ const M = {
     "🚐💎 MOBILE DETAILING — WE COME TO YOU 💎🚐Home • Office • Anywhere You Park⚡ Tesla Model Y dial.jpg",
     "Dun-Rite mobile detailing service working at a customer location",
   ),
-  interiorDisaster: newImage(
-    "⚠️Warning- kids at play, interior disaster detail unfolding! Swipe left to see the before & afte.jpg",
-    "Interior detail before and after on a heavily used family vehicle",
-  ),
+  interiorDisaster,
   paintCorrection: newImage(
     "Back at it again — maintenance detail on this stunning 488 Spider 🕷️Always Dun-Rite. Always per.jpg",
     "Luxury sports car receiving paint correction and finishing work",
@@ -234,7 +236,7 @@ const M = {
   },
   washPhoto: newImage(
     "wash1.jpg",
-    "Vehicle with a fresh finish after a wash and wax service",
+    "Vehicle covered in thick foam during an exterior wash",
   ),
   boatDetailing: newImage(
     "33.jpg",
@@ -252,10 +254,25 @@ const M = {
     src: "/img/interior.jpg",
     alt: "Clean light-colored leather interior after detailing",
   },
+  membershipCard: {
+    kind: "image",
+    src: "/img/membership.jpg",
+    alt: "Dun-Rite vehicle care membership",
+  },
+  eGiftCard: {
+    kind: "image",
+    src: "/img/eGift_Card.png",
+    alt: "Dun-Rite electronic gift card",
+  },
+  giftCard: {
+    kind: "image",
+    src: "/img/gift.jpg",
+    alt: "Dun-Rite $400 gift card",
+  },
   interiorVideo: {
     kind: "video",
     src: "/video/interior.mp4",
-    poster: PHOTOS.galleryThree.src,
+    poster: interiorDisaster.src,
     alt: "Interior detailing: leather seat and floor mat deep clean",
     portrait: true,
   },
@@ -297,7 +314,7 @@ const M = {
   correction: {
     kind: "video",
     src: "/video/correction.mp4",
-    poster: PHOTOS.gallerySix.src,
+    poster: INSTAGRAM_PHOTOS.instagramHonda.src,
     alt: "Machine polishing a black SUV in the Dun-Rite studio",
     portrait: true,
   },
