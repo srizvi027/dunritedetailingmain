@@ -2,10 +2,6 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { MEDIA, SITE } from "@/lib/content";
-import Loader from "@/components/Loader";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
 
 const unbounded = localFont({
   src: "../fonts/unbounded-latin-wght-normal.woff2",
@@ -77,24 +73,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${unbounded.variable} ${manrope.variable} ${instrument.variable}`}>
       <body>
-        <noscript>
-          <style>{`.dr-loader{display:none!important}`}</style>
-        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Loader />
-        <SmoothScroll />
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:bg-pink focus:px-4 focus:py-2 focus:text-white"
-        >
-          Skip to content
-        </a>
-        <Nav />
         <main id="main">{children}</main>
-        <Footer />
       </body>
     </html>
   );
