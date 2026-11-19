@@ -1,12 +1,29 @@
 import type { Metadata } from "next";
-import ComingSoon from "./coming-soon/page";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import ServicesIndex from "@/components/ServicesIndex";
+import GallerySection from "@/components/GallerySection";
+import Why from "@/components/Why";
+import Testimonials from "@/components/Testimonials";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: { absolute: "Coming Soon | Dun-Rite Detailing & Coatings" },
-  description: "Dun-Rite Detailing & Coatings is coming soon.",
+  title: { absolute: "Dun-Rite Detailing & Coatings | Myrtle Beach" },
+  description:
+    "Professional mobile and in-shop detailing, ceramic coating, paint correction and paint protection in Myrtle Beach, SC.",
   alternates: { canonical: "/" },
 };
 
 export default function Home() {
-  return <ComingSoon />;
+  return (
+    <>
+      <Hero />
+      <About />
+      <ServicesIndex />
+      <GallerySection />
+      <Why />
+      <Testimonials />
+      <CTA />
+    </>
+  );
 }
