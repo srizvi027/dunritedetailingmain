@@ -41,14 +41,14 @@ export default function PricingServiceCard({
             {service.duration}
           </p>
         )}
-        <ul className="mt-5 grid flex-1 auto-rows-fr grid-cols-2 gap-2 sm:grid-cols-3">
+        <ul className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {service.options.map((option) => (
             <li
               key={option.label}
-              className="flex min-w-0 flex-col justify-between border border-white/10 bg-black/50 p-3"
+              className="flex min-h-[88px] min-w-0 flex-col gap-3 border border-white/10 bg-black/50 p-3"
             >
               <span className="text-xs leading-relaxed text-silver">{option.label}</span>
-              <span className="mt-2 font-display text-sm font-bold text-white sm:text-base">
+              <span className="font-display text-sm font-bold text-white sm:text-base">
                 {formatPrice(option.amount)}
                 {option.startingAt && <span className="text-pink">+</span>}
               </span>

@@ -30,7 +30,7 @@ export default function PricingOverview() {
           </Reveal>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-4">
           {HOMEPAGE_PRICING.map((service) => (
             <PricingServiceCard key={service.name} service={service} />
           ))}
