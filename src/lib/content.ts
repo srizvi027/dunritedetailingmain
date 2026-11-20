@@ -171,6 +171,10 @@ const interiorDisaster = newImage(
   "⚠️Warning- kids at play, interior disaster detail unfolding! Swipe left to see the before & afte.jpg",
   "Interior detail before and after on a heavily used family vehicle",
 );
+const washPhoto = newImage(
+  "wash1.jpg",
+  "Vehicle covered in thick foam during an exterior wash",
+);
 
 const M = {
   van: {
@@ -230,14 +234,11 @@ const M = {
   washVideo: {
     kind: "video",
     src: "/img/new%20images/wash.mp4",
-    poster: "/img/interior.jpg",
+    poster: washPhoto.src,
     alt: "Quick wash and wax video showing a vehicle getting a fresh finish",
     portrait: true,
   },
-  washPhoto: newImage(
-    "wash1.jpg",
-    "Vehicle covered in thick foam during an exterior wash",
-  ),
+  washPhoto,
   boatDetailing: newImage(
     "33.jpg",
     "Boat detailing and premium finish restoration in the marine environment",
