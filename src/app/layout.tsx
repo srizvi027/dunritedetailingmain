@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SITE } from "@/lib/content";
+import { MEDIA, SITE } from "@/lib/content";
+import Loader from "@/components/Loader";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const unbounded = localFont({
   src: "../fonts/unbounded-latin-wght-normal.woff2",
@@ -25,9 +29,19 @@ const instrument = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: "Coming Soon | Dun-Rite Detailing & Coatings",
+  title: {
+    default: "Dun-Rite Detailing & Coatings | Mobile Detailing, Ceramic Coating & Paint Correction in Myrtle Beach, SC",
+    template: "%s | Dun-Rite Detailing & Coatings",
+  },
   description:
-    "Dun-Rite Detailing & Coatings is coming soon.",
+    "Professional mobile and in-shop auto detailing, ceramic coating, paint correction and paint protection in Myrtle Beach, SC. Request a free quote.",
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    locale: "en_US",
+    images: [{ url: MEDIA.instagramBmw.src, alt: MEDIA.instagramBmw.alt }],
+  },
+  twitter: { card: "summary_large_image" },
   icons: {
     icon: [{ url: "/img/logo.png", type: "image/png", sizes: "160x160" }],
     apple: [{ url: "/img/logo.png", type: "image/png", sizes: "160x160" }],
@@ -39,10 +53,40 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoDetailing",
+  name: SITE.name,
+  legalName: SITE.legalName,
+  url: SITE.url,
+  telephone: SITE.tel,
+  email: SITE.email,
+  image: `${SITE.url}${MEDIA.instagramBmw.src}`,
+  logo: `${SITE.url}/img/logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: SITE.city,
+    addressRegion: "SC",
+    addressCountry: "US",
+  },
+  areaServed: SITE.areas.map((name) => ({ "@type": "City", name })),
+  sameAs: [SITE.instagram, SITE.facebook],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${unbounded.variable} ${manrope.variable} ${instrument.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Loader />
+        <Nav />
+        <SmoothScroll />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <main id="main">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
