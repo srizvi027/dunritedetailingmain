@@ -51,6 +51,98 @@ body {
   overflow-x: clip;
 }
 
+@keyframes coming-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coming-fade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coming-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(237, 26, 112, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(237, 26, 112, 0);
+  }
+}
+
+@keyframes coming-spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.coming-line {
+  opacity: 0;
+  animation: coming-reveal 1s var(--ease) forwards;
+}
+
+.coming-line-one {
+  animation-delay: 0.15s;
+}
+
+.coming-line-two {
+  animation-delay: 0.32s;
+}
+
+.coming-kicker,
+.coming-copy,
+.coming-actions {
+  opacity: 0;
+  animation: coming-fade 0.8s var(--ease) forwards;
+}
+
+.coming-kicker {
+  animation-delay: 0.55s;
+}
+
+.coming-copy {
+  animation-delay: 0.72s;
+}
+
+.coming-actions {
+  animation-delay: 0.86s;
+}
+
+.coming-status {
+  animation: coming-pulse 1.8s ease-out infinite;
+}
+
+.coming-orbit {
+  animation: coming-spin 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coming-line,
+  .coming-kicker,
+  .coming-copy,
+  .coming-actions {
+    opacity: 1;
+    animation: none;
+  }
+
+  .coming-status,
+  .coming-orbit {
+    animation: none;
+  }
+}
+
 ::selection {
   background: var(--pink);
   color: var(--white);
