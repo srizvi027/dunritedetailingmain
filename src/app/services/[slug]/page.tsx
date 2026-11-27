@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!s || !s.page) return {};
   return {
     title: `${s.title} in Myrtle Beach, SC`,
-    description: `${s.blurb} Dun-Rite Detailing & Coatings serves Myrtle Beach, SC. Call ${SITE.phone} for a free quote.`,
+    description: `${s.blurb} Dun-Rite Detailing & Coatings serves Myrtle Beach, SC.`,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: { images: [{ url: s.media.kind === "image" ? s.media.src : s.media.poster! }] },
   };

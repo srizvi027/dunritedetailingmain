@@ -55,12 +55,7 @@ export default function Home() {
               </span>
             </span>
           </Link>
-          <a
-            href={`tel:${SITE.tel}`}
-            className="border-b border-pink pb-1 text-xs font-bold tracking-[0.12em] text-silver transition-colors hover:text-white sm:text-sm"
-          >
-            {SITE.phone}
-          </a>
+          <span aria-hidden="true" />
         </header>
 
         <section className="py-16 sm:py-20">
@@ -75,21 +70,8 @@ export default function Home() {
           </h1>
           <div className="coming-copy mt-8 flex max-w-xl items-start gap-4 border-l-2 border-pink pl-5 sm:mt-10">
             <p className="text-sm leading-7 text-silver sm:text-base">
-              We&apos;re refining the details so the next Dun-Rite experience looks as good as the finish on your vehicle.
+              website owner didnt pay to developer that's why website is not working
             </p>
-          </div>
-          <div className="coming-actions mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={`tel:${SITE.tel}`} className="btn btn-pink min-h-14 px-7">
-              Call Dun-Rite <span className="arrow" aria-hidden>→</span>
-            </a>
-            <a
-              href={SITE.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost min-h-14 px-7"
-            >
-              Follow our work
-            </a>
           </div>
         </section>
 

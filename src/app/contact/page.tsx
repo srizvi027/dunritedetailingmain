@@ -7,7 +7,7 @@ import { SITE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact Dun-Rite Detailing",
-  description: `Call ${SITE.phone} or email ${SITE.email}. Dun-Rite Detailing & Coatings, ${SITE.location}.`,
+  description: `Email ${SITE.email}. Dun-Rite Detailing & Coatings, ${SITE.location}.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -22,12 +22,6 @@ export default function ContactPage() {
               <h2 className="font-display text-xl font-extrabold uppercase">{SITE.name}</h2>
               <ul className="mt-10 divide-y divide-white/10 border-y border-white/10">
                 <li className="py-6">
-                  <p className="eyebrow mb-2 text-pink">Phone</p>
-                  <a href={`tel:${SITE.tel}`} className="u-link font-display text-2xl font-extrabold">
-                    {SITE.phone}
-                  </a>
-                </li>
-                <li className="py-6">
                   <p className="eyebrow mb-2 text-pink">Email</p>
                   <a href={`mailto:${SITE.email}`} className="u-link break-all text-lg font-bold">
                     {SITE.email}
@@ -37,13 +31,6 @@ export default function ContactPage() {
                   <p className="eyebrow mb-2 text-pink">Location</p>
                   <p className="text-lg font-bold">{SITE.location}</p>
                   <p className="mt-2 text-sm text-silver">Mobile service: {SITE.areas.join(", ")}.</p>
-                </li>
-                <li className="py-6">
-                  <p className="eyebrow mb-2 text-pink">Follow</p>
-                  <div className="flex gap-6 font-bold">
-                    <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="u-link">Instagram</a>
-                    <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="u-link">Facebook</a>
-                  </div>
                 </li>
               </ul>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">

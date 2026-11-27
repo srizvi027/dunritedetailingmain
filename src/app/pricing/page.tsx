@@ -87,9 +87,6 @@ export default function PricingPage() {
               >
                 Book online <span className="arrow" aria-hidden>→</span>
               </a>
-              <a href={`tel:${SITE.tel}`} className="btn btn-ghost">
-                Call {SITE.phone}
-              </a>
             </div>
           </div>
         </div>

@@ -31,9 +31,6 @@ export default function CTA({
           <Link href="/get-a-quote" className="btn btn-pink">
             Get a free quote <span className="arrow" aria-hidden>→</span>
           </Link>
-          <a href={`tel:${SITE.tel}`} className="btn btn-ghost">
-            Call {SITE.phone}
-          </a>
         </Reveal>
       </div>
     </section>

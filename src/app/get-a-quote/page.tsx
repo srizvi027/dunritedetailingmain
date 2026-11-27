@@ -32,9 +32,6 @@ export default function QuotePage() {
             <Reveal>
               <div className="sticky top-28 border border-white/10 bg-white/[0.03] p-8">
                 <h2 className="eyebrow mb-6 text-pink">Prefer to talk?</h2>
-                <a href={`tel:${SITE.tel}`} className="font-display text-2xl font-extrabold">
-                  {SITE.phone}
-                </a>
                 <p className="mt-4 break-all text-sm">
                   <a href={`mailto:${SITE.email}`} className="u-link text-silver hover:text-white">
                     {SITE.email}

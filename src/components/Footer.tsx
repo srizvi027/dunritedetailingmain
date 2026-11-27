@@ -54,11 +54,6 @@ export default function Footer() {
             <h2 className="eyebrow mb-5 text-pink">Contact</h2>
             <address className="space-y-3 text-sm not-italic text-silver">
               <p>{SITE.name}</p>
-              <p>
-                <a href={`tel:${SITE.tel}`} className="u-link text-white">
-                  {SITE.phone}
-                </a>
-              </p>
               <p className="break-all">
                 <a href={`mailto:${SITE.email}`} className="u-link text-white">
                   {SITE.email}

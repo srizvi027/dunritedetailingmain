@@ -139,13 +139,6 @@ export default function Hero() {
             />
             Explore Detailing Services <span className="arrow" aria-hidden>→</span>
           </Link>
-          <a
-            href={`tel:${SITE.tel}`}
-            className="btn btn-ghost min-h-14 flex-1 px-5 py-4 text-center text-xs tracking-[0.12em] sm:text-sm"
-            aria-label={`Call Dun-Rite at ${SITE.phone}`}
-          >
-            Call <strong className="font-extrabold">{SITE.phone}</strong>
-          </a>
         </motion.div>
       </motion.div>
 

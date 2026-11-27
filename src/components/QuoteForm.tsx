@@ -144,11 +144,7 @@ export default function QuoteForm() {
       <div role="status" className="border border-pink/60 bg-pink/10 p-10 text-center">
         <p className="type-pink font-display text-3xl font-extrabold uppercase">Request received</p>
         <p className="mt-4 text-silver">
-          Thanks, we&apos;ll be in touch soon. Need us sooner? Call{" "}
-          <a className="u-link text-white" href={`tel:${SITE.tel}`}>
-            {SITE.phone}
-          </a>
-          .
+          Thanks, we&apos;ll be in touch soon.
         </p>
       </div>
     );
@@ -225,11 +221,10 @@ export default function QuoteForm() {
         <div role="alert" className="border border-white/20 bg-white/[0.04] p-6 text-sm leading-relaxed text-silver">
           <p className="font-bold text-white">Online submission isn&apos;t connected yet.</p>
           <p className="mt-2">
-            Your details are filled in below. Send them by email, call us, or book directly.
+            Your details are filled in below. Send them by email or book directly.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <a href={status.mailto} className="btn btn-pink">Email this request</a>
-            <a href={`tel:${SITE.tel}`} className="btn btn-ghost">Call {SITE.phone}</a>
             <a href={SITE.bookUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Book online</a>
           </div>
         </div>

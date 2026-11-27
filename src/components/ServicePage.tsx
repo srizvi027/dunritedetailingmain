@@ -78,9 +78,6 @@ export default function ServicePage({ service }: { service: Service }) {
             >
               Get a quote <span className="arrow" aria-hidden>→</span>
             </Link>
-            <a href={`tel:${SITE.tel}`} className="btn btn-ghost">
-              {SITE.phone}
-            </a>
           </Reveal>
         </div>
       </section>

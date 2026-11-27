@@ -95,7 +95,6 @@ export default function ContactForm() {
           <p className="mt-2">Your message is ready. Send it by email or call us.</p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <a href={status.mailto} className="btn btn-pink">Email this message</a>
-            <a href={`tel:${SITE.tel}`} className="btn btn-ghost">Call {SITE.phone}</a>
           </div>
         </div>
       )}

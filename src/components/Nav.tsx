@@ -92,10 +92,7 @@ export default function Nav() {
         }`}
       >
         <div className="border-b border-white/10 bg-pink px-4 py-2 text-center text-[0.65rem] font-extrabold uppercase tracking-[0.12em] text-white sm:text-xs sm:tracking-[0.18em]">
-          Free custom quotes. Call us any time{" "}
-          <a href={`tel:${SITE.tel}`} className="whitespace-nowrap underline underline-offset-2 hover:text-black">
-            {SITE.phone}
-          </a>
+          Free custom quotes
         </div>
         <nav
           aria-label="Primary"
@@ -369,9 +366,6 @@ export default function Nav() {
                 <Link href="/get-a-quote" className="btn btn-ghost w-full">
                   Get a free quote
                 </Link>
-                <a href={`tel:${SITE.tel}`} className="block pt-4 font-display text-xl font-bold text-white">
-                  {SITE.phone}
-                </a>
                 <p>{SITE.location}</p>
               </div>
             </div>
